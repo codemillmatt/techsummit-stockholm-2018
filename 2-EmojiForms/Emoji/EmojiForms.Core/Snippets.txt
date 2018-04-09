@@ -1,0 +1,5 @@
+﻿{Binding EmojiText}
+
+<Entry Text="{Binding Sentence}" Margin="20" />
+
+Command="{Binding GetEmojiCommand}" 

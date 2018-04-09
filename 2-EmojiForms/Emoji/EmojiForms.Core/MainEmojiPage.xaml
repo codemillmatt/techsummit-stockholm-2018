@@ -8,8 +8,8 @@
         <StackLayout VerticalOptions="Center">
             <Label x:Name="emojiText" Text="{Binding EmojiText}" FontSize="72"
                    HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
-            <Entry Text="{Binding Sentence}" Margin="20" />
-            <Button x:Name="getEmoji" Text="Get Emoji" Command="{Binding GetEmojiCommand}" />
+
+            <Button x:Name="getEmoji" Text="Get Emoji" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

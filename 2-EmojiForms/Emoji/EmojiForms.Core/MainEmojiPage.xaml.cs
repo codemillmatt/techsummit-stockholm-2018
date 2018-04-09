@@ -11,18 +11,18 @@ namespace EmojiForms.Core
         {
             InitializeComponent();
 
-            // this is used before MVVM
-            //getEmoji.Clicked += async (object sender, EventArgs e) =>
-            //{
-            //    var emojiService = new EmojiService();
+            //this is used before MVVM
+            getEmoji.Clicked += async (object sender, EventArgs e) =>
+            {
+                var emojiService = new EmojiService();
 
-            //    var emojiInfo = await emojiService.GetEmoji();
+                var emojiInfo = await emojiService.GetEmoji();
 
-            //    emojiText.Text = emojiInfo.Emoji;
-            //};
+                emojiText.Text = emojiInfo.Emoji;
+            };
 
 
-            BindingContext = new MainEmojiViewModel();
+            //BindingContext = new MainEmojiViewModel();
         }
     }
 }
