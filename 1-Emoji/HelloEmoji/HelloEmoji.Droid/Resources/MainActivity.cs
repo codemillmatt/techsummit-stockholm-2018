@@ -3,6 +3,7 @@ using Android.Widget;
 using Android.OS;
 
 using HelloEmoji.Core;
+using System.Net.Http;
 
 namespace HelloEmoji.Droid
 {
@@ -20,8 +21,11 @@ namespace HelloEmoji.Droid
 
             getEmoji.Click += async (sender, e) =>
             {
-                var emojiService = new EmojiService();
-                var emojiInfo = await emojiService.GetEmoji();
+                var client = new HttpClient();
+
+                var responseJson = await client.GetStringAsync("https://textsentiment.azurewebsites.net/api/RandomEmoji");
+
+                var emojiInfo = EmojiInfo.FromJson(responseJson);
 
                 emojiText.Text = emojiInfo.Emoji;
             };
