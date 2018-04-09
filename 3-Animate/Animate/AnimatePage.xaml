@@ -9,7 +9,7 @@
             BackgroundColor="#f25022" TextColor="Black" FontSize="40" 
             Clicked="Translate_Clicked" />
 
-        <Button x:Name="scaleButton" Text="Scale" 
+        <Button x:Name="scaleButton" Text="Scale"  
             BackgroundColor="#7fba00" TextColor="Black" FontSize="40" 
             Clicked="Scale_Clicked" /> 
 

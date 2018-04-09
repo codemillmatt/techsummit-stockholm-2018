@@ -19,8 +19,8 @@ namespace Animate
 
         async void Scale_Clicked(object sender, System.EventArgs e)
         {
-            await scaleButton.ScaleTo(3, 1000);
-            await scaleButton.ScaleTo(1, 1000, Easing.SpringOut);
+            //await scaleButton.ScaleTo(3, 1000);
+            //await scaleButton.ScaleTo(1, 1000, Easing.SpringOut);
         }
 
         async void Rotate_Clicked(object sender, System.EventArgs e)
