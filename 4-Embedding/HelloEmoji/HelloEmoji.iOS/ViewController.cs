@@ -3,6 +3,7 @@ using System;
 
 using UIKit;
 using Xamarin.Forms.Platform.iOS;
+using HelloEmoji.Core;
 
 namespace HelloJokes.iOS
 {
@@ -16,14 +17,12 @@ namespace HelloJokes.iOS
         {
             base.ViewDidLoad();
 
-            getEmoji.TouchUpInside += (sender, e) =>
-            {
-                //9a. View Controller
-                var landingController = new LandingPage().CreateViewController();
-
-                //9b. Navigate to it
-                NavigationController.PushViewController(landingController, true);
-            };
+            getEmoji.TouchUpInside += async (sender, e) =>
+             {
+                 var emojiService = new EmojiService();
+                 var emojiInfo = await emojiService.GetRandomEmoji();
+                 emojiText.Text = emojiInfo.Emoji;
+             };
         }
 
         public override void DidReceiveMemoryWarning()

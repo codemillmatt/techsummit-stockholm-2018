@@ -9,6 +9,7 @@ using HelloJokes.Core;
 using Xamarin.Forms.Platform.Android;
 using Android.Support.V7.App;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
+using HelloEmoji.Core;
 
 namespace HelloEmoji.Droid
 {
@@ -30,11 +31,7 @@ namespace HelloEmoji.Droid
 
             FragmentTransaction ft = FragmentManager.BeginTransaction();
 
-            // Create fragment
-            var landingFragment = new LandingPage().CreateFragment(this);
-
-            // Replace fragment
-            ft.Replace(Resource.Id.fragment_frame_layout, landingFragment, "main");
+            ft.Replace(Resource.Id.fragment_frame_layout, new MainFragment(), "main");
 
             ft.Commit();
 
@@ -51,10 +48,11 @@ namespace HelloEmoji.Droid
 
             getJoke.Click += async (sender, e) =>
             {
-                var jokeText = view.FindViewById<TextView>(Resource.Id.emojiText);
+                var emojiText = view.FindViewById<TextView>(Resource.Id.emojiText);
 
-                var jokeService = new JokeService();
-                jokeText.Text = (await jokeService.GetJoke()).Joke;
+                var emojiService = new EmojiService();
+                var emojiInfo = await emojiService.GetRandomEmoji();
+                emojiText.Text = emojiInfo.Emoji;
             };
 
             return view;
