@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <color name="primary">
+        #283593
+    </color>
+    <color name="primary_dark">
+        #001064
+    </color>
+    <color name="accent">
+    #5f5fc4
+    </color>
+    <color name="window_background">
+        #ffffff
+    </color>
+</resources>

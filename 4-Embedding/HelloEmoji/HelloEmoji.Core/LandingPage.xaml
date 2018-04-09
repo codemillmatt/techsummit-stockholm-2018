@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloJokes.Core.LandingPage"
+             Title="Joke WARNING!">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#b2169c</Color>
+            <Color x:Key="PrimaryDark">#590b4e</Color>
+            <Color x:Key="Accent">#fdb82c</Color>
+            <Color x:Key="CDAYellow">#fdb82c</Color>
+            <Color x:Key="CDABlue">#137ad3</Color>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+            <OnPlatform x:Key="ButtonOutlineBackgroundColor" x:TypeArguments="Color">
+                <On Platform="Android" Value="{StaticResource Primary}"/>
+                <On Platform="iOS" Value="Transparent"/>
+            </OnPlatform>
+
+            <OnPlatform x:Key="ButtonOutlineTextColor" x:TypeArguments="Color">
+                <On Platform="Android" Value="White"/>
+                <On Platform="iOS" Value="{StaticResource Primary}"/>
+            </OnPlatform>
+
+            <OnPlatform x:Key="ButtonOutlineBorderColor" x:TypeArguments="Color">
+                <On Platform="iOS" Value="{StaticResource Primary}"/>
+                <On Platform="Android" Value="Transparent"/>
+            </OnPlatform>
+
+            <OnPlatform x:Key="ButtonOutlineBorderWidth" x:TypeArguments="x:Double">
+                <On Platform="iOS" Value="1"/>
+                <On Platform="Android" Value="0"/>
+            </OnPlatform>
+
+
+            <Style x:Key="ButtonOutline" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource ButtonOutlineBackgroundColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource ButtonOutlineTextColor}"/>
+                <Setter Property="BorderColor" Value="{StaticResource ButtonOutlineBorderColor}"/>
+                <Setter Property="BorderWidth" Value="{StaticResource ButtonOutlineBorderWidth}"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid Padding="10" RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="1" Grid.ColumnSpan="2" Source="ic_henrybit.png" 
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="FillAndExpand"
+                   Aspect="AspectFit"/>
+
+            <Label Grid.Row="2" Grid.ColumnSpan="2" x:Name="emojiText"
+                   Text="Ready for an emoji?!?"
+                   VerticalOptions="FillAndExpand" 
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
+
+            <Button Grid.Row="3" Grid.ColumnSpan="2"
+                    x:Name="okButton"
+                    IsEnabled="{Binding IsNotBusy}"
+                    BorderRadius="15" Text="Get Emoji"
+                    HorizontalOptions="FillAndExpand" 
+                    Style="{StaticResource ButtonOutline}">
+            </Button>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

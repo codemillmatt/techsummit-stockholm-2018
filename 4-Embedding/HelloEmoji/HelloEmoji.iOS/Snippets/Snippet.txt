@@ -1,0 +1,9 @@
+﻿//hide the label and change button text
+jokeText.Hidden = true;
+getJoke.SetTitle("Click for jokes!", UIControlState.Normal);
+
+
+//Create the Xam.Forms Page and push onto the stack
+var vc = new LandingPage().CreateViewController();
+
+this.NavigationController.PushViewController(vc, true);
