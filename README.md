@@ -40,7 +40,7 @@ The first demo goes through building a traditional Xamarin Android application, 
 
 ### Demo 2
 
-The second demo shows off the power of Xamarin.Forms by demonstrating a full Forms app that makes use of several features of Azure including [CosmosDB](http://msou.co/bf0), [Azure Functions](https://msou.co/bfz), and [Azure Active Directory](https://msou.co/bfy).
+The second demo shows off the power of Xamarin.Forms by demonstrating a full Forms app that makes use of several features of Azure including [CosmosDB](https://msou.co/bf0), [Azure Functions](https://msou.co/bfz), and [Azure Active Directory](https://msou.co/bfy).
 
 ### Demo 3
 
